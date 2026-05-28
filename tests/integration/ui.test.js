@@ -40,3 +40,16 @@ test("뺄셈 버튼이 두 입력값을 빼서 display에 표시한다", () => {
  document.querySelector('[data-testid="btn-multiply"]').click();
  expect(document.querySelector('[data-testid="display"]').textContent).toBe("18");
  });
+ 
+test("나누기 버튼이 두 입력값을 나눠서 display에 표시한다", () => {
+ document.getElementById("inputA").value = "20";
+ document.getElementById("inputB").value = "4";
+ document.querySelector('[data-testid="btn-divide"]').click();
+ expect(document.querySelector('[data-testid="display"]').textContent).toBe("5");
+ });
+test("0으로 나누면 에러 메시지를 display에 표시한다", () => {
+ document.getElementById("inputA").value = "10";
+ document.getElementById("inputB").value = "0";
+ document.querySelector('[data-testid="btn-divide"]').click();
+ expect(document.querySelector('[data-testid="display"]').textContent).toBe("0으로 나눌 수 없습니다");
+ });

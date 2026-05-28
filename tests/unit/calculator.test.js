@@ -33,3 +33,12 @@ describe("multiply", () => {
   expect(multiply(7, 0)).toBe(0);
  });
 });
+
+describe("divide", () => {
+ test("두 수를 나눈다", () => {
+  expect(calculate("divide", 10, 2)).toBe(5);
+ });
+ test("0으로 나누면 에러를 던진다", () => {
+  expect(() => calculate("divide", 10, 0)).toThrow("0으로 나눌 수 없습니다");
+ });
+});
